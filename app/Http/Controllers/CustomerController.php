@@ -14,7 +14,7 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        // $customer = DB::table('customers')->get;
+        // $customer = DB::table('customers')->get();
         // dump($customer);
         return view('customer/index',);
     }
