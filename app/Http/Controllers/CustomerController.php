@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-
+use App\Customer;
 class CustomerController extends Controller
 {
     /**
@@ -14,8 +14,9 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        $customer = DB::table('customers')->get();
+        // $customer = DB::table('customers')->get();
         // dump($customer);
+        $customer = Customer::all();
         return view('customer/index', ['customer' => $customer]);
     }
 
