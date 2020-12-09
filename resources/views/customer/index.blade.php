@@ -22,7 +22,7 @@
             }
 
             .full-height {
-                height: 100vh;
+                /* height: 100vh; */
             }
 
             .flex-center {
@@ -88,6 +88,7 @@
                 <table style="margin:auto;width:100%;padding:5rem;">
                     <thead>
                         <th>#</th>
+                        <th>CsNumber</th>
                         <th>name</th>
                         <th>phone</th>
                         <th>address1</th>
@@ -96,17 +97,20 @@
                         <th>aksi</th>
                     </thead>
                     <tbody>
+                        @foreach($customer as $cs)
                         <tr>
-                            <td>1</td>
-                            <td>dudy</td>
-                            <td>021-99</td>
-                            <td>jl.elang vi</td>
-                            <td>bekasi</td>
-                            <td>100</td>
+                            <td>{{$loop -> iteration}}</td>
+                            <td>{{$cs->customerNumber}}</td>
+                            <td>{{$cs->customerName}}</td>
+                            <td>{{$cs->phone}}</td>
+                            <td>{{$cs->addressLine1}}</td>
+                            <td>{{$cs->city}}</td>
+                            <td>{{$cs->creditLimit}}</td>
                             <td>
                                 <a href="#">edit</a>
                                 <a href="#">delete</a>
                             </td>
+                          @endforeach
                         </tr>
                     </tbody>
                 </table>
